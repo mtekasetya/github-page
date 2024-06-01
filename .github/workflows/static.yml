@@ -34,7 +34,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Install Mermaid
-        run: npm install -g mermaid.cli
+        run: npm install -g @mermaid-js/mermaid-cli
       - name: Build
         run: ./gradlew asciiDoctor
       - name: Upload artifact
