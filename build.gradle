@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id "org.asciidoctor.jvm.convert" version "3.3.2"
+    id "org.asciidoctor.jvm.pdf" version "3.3.2"
+    id "org.asciidoctor.jvm.gems" version "3.3.2"
+}
+
+sourceCompatibility = '17'
+
+configurations {
+    asciidoctorExt // Declare the asciidoctorExt configuration for dependencies that extend Asciidoctor.
+}
+
+asciidoctorj {
+    modules {
+        diagram.version = "2.2.13"
+    }
+}
+
+asciidoctor {
+    baseDir file('src/docs/asciidoc')
+    outputDir file('build/docs/html')
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    asciidoctorExt 'org.springframework.restdocs:spring-restdocs-asciidoctor:3.0.1'
+}

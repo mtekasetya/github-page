@@ -6,6 +6,5 @@
 
 ....
 graph TD
-    flowchart TD
     Start --> Stop
 ....
